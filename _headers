@@ -1,0 +1,26 @@
+/*
+  # HSTS Rollout (Stage 2): preload omitted until 30 days verified HTTPS across all subdomains
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-Robots-Tag: noindex, nofollow
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self' data:; connect-src 'self'; font-src 'self' data:; frame-ancestors 'none'; report-uri /api/csp-report
+  # ENFORCING CSP (Stage 2 Staging Gate - uncomment after all inline scripts migrated):
+  # Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self' data:; connect-src 'self'; font-src 'self' data:; frame-ancestors 'none'
+
+# Cache Rules: HTML documents
+/*.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+/
+  Cache-Control: public, max-age=300, must-revalidate
+
+# Cache Rules: Hashed assets (immutable)
+/assets/*.hash.*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache Rules: Unhashed static assets
+/assets/*
+  Cache-Control: public, max-age=600

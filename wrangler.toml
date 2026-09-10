@@ -1,0 +1,14 @@
+﻿name = "quiktalkai"
+compatibility_date = "2024-09-01"
+pages_build_output_dir = "."
+
+# Production & Staging Environment Variable Bindings (defined in Cloudflare Dashboard)
+# [vars]
+# LEAD_WEBHOOK_URL = ""       # Configured in Cloudflare Dashboard secret
+# ADMIN_EMAIL = ""            # Configured in Cloudflare Dashboard secret
+# ANALYTICS_ID = ""           # Configured in Cloudflare Dashboard secret
+
+# Route and build details:
+# - Static assets served directly from root
+# - Functions executed automatically from functions/api/*
+# - _headers and _redirects evaluated natively at Cloudflare Edge

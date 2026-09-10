@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pricing & Plans | Quiktalk AI — 24/7 AI Voice Receptionists</title>
+  <meta name="description" content="Transparent pricing for 24/7 AI voice receptionists in New Zealand and Australia. Compare Starter, Growth, and Custom plans with no long-term lock-in.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://www.quiktalkai.com/pricing">
+  <link rel="icon" href="assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#060608">
+  <style>
+    :root {
+      --ink: #060608;
+      --ink-card: rgba(12, 12, 16, 0.85);
+      --bone: #f8fafc;
+      --bone-dim: #a1a1aa;
+      --cyan: #e5c158;
+      --cyan-dim: rgba(229, 193, 88, 0.15);
+      --line: rgba(229, 193, 88, 0.22);
+      --line-soft: rgba(255, 255, 255, 0.08);
+      --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--bone);
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+    .draft-banner {
+      background: #7c2d12;
+      color: #fef08a;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(234, 179, 8, 0.4);
+    }
+    header {
+      border-bottom: 1px solid var(--line-soft);
+      padding: 18px clamp(18px, 4vw, 48px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #fff;
+    }
+    .logo-img { width: 32px; height: 32px; object-fit: contain; }
+    .nav-back { font-size: 13px; color: var(--bone-dim); display: inline-flex; align-items: center; gap: 6px; }
+    .nav-back:hover { color: #fff; text-decoration: none; }
+    main {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: clamp(32px, 5vw, 64px) clamp(18px, 4vw, 36px);
+    }
+    .head-center { text-align: center; max-width: 760px; margin: 0 auto 50px; }
+    h1 { font-size: clamp(28px, 4vw, 46px); font-weight: 400; letter-spacing: -0.02em; margin: 0 0 16px; color: #fff; line-height: 1.15; }
+    .subhead { font-size: 17px; color: var(--bone-dim); line-height: 1.6; }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+    .price-card {
+      background: var(--ink-card);
+      border: 1px solid var(--line-soft);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .price-card.popular {
+      border-color: var(--cyan);
+      box-shadow: 0 0 30px rgba(229, 193, 88, 0.12);
+    }
+    .popular-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--cyan);
+      color: #000;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 4px 14px;
+      border-radius: 20px;
+    }
+    .tier-title { font-size: 20px; font-weight: 500; color: #fff; margin: 0 0 8px; }
+    .tier-desc { font-size: 13px; color: var(--bone-dim); margin-bottom: 24px; min-height: 40px; }
+    .tier-price { font-size: 38px; font-weight: 600; color: var(--cyan); line-height: 1; margin-bottom: 6px; }
+    .tier-period { font-size: 13px; color: var(--bone-dim); margin-bottom: 24px; }
+    .feature-list { list-style: none; padding: 0; margin: 0 0 32px; flex-grow: 1; }
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: #d4d4d8;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .feature-list li::before {
+      content: '✓';
+      color: var(--cyan);
+      font-weight: bold;
+    }
+    .btn-cta {
+      display: block;
+      text-align: center;
+      background: var(--cyan);
+      color: #000;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 14px 20px;
+      border-radius: 8px;
+      transition: opacity 0.2s;
+    }
+    .btn-cta:hover { opacity: 0.9; text-decoration: none; }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+    .comp-section {
+      background: var(--ink-card);
+      border: 1px solid var(--line-soft);
+      border-radius: 16px;
+      padding: clamp(24px, 4vw, 40px);
+      margin: 60px 0;
+    }
+    .comp-title { font-size: 24px; font-weight: 500; color: #fff; margin: 0 0 20px; text-align: center; }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    .comp-table th, .comp-table td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .comp-table th { color: #fff; font-weight: 500; }
+    .comp-table td { color: var(--bone-dim); }
+    .comp-table tr td:last-child { color: var(--cyan); font-weight: 500; }
+    @media (max-width: 768px) {
+      .comp-table { display: block; overflow-x: auto; }
+    }
+    footer {
+      border-top: 1px solid var(--line-soft);
+      padding: 32px clamp(18px, 4vw, 48px);
+      text-align: center;
+      font-size: 13px;
+      color: var(--bone-dim);
+      margin-top: 60px;
+    }
+    footer a { color: var(--bone-dim); margin: 0 10px; }
+    footer a:hover { color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="draft-banner" role="alert">
+    DRAFT PRICING — LOCAL VALIDATION ONLY · PENDING FINAL COMMERCIAL CONFIRMATION (PH-01)
+  </div>
+
+  <header>
+    <a href="/" class="logo-link">
+      <img src="assets/logo.png" alt="Quiktalk AI Logo" class="logo-img" width="32" height="32">
+      Quiktalk AI
+    </a>
+    <a href="/" class="nav-back">&larr; Back to Homepage</a>
+  </header>
+
+  <main id="main">
+    <div class="head-center">
+      <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 12px;">
+        TRANSPARENT VOLUME-BASED PRICING
+      </div>
+      <h1>Simple, Predictable Plans For Every Stage of Business</h1>
+      <div class="subhead">
+        Every plan includes 24/7 call coverage, natural NZ/AU voice models, calendar booking sync, and unconditional month-to-month flexibility.
+      </div>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Starter -->
+      <div class="price-card">
+        <h2 class="tier-title">Starter (Trades & Solo)</h2>
+        <div class="tier-desc">Ideal for solo trades, boutique clinics, and independent operators looking to stop missing leads.</div>
+        <div class="tier-price">$149 <span style="font-size: 16px; font-weight: 400; color: var(--bone-dim);">NZD</span></div>
+        <div class="tier-period">per month · billed monthly</div>
+        <ul class="feature-list">
+          <li><strong>100 call minutes</strong> included monthly</li>
+          <li>24/7/365 instant call answering</li>
+          <li>Answers on your existing phone number</li>
+          <li>Google Calendar / Outlook appointment sync</li>
+          <li>Instant SMS & email lead notifications</li>
+          <li>Call audio recording & transcripts portal</li>
+          <li>$0.95 NZD / min overage rate</li>
+        </ul>
+        <a href="/#demo" class="btn-cta btn-secondary">Get Free Demo Agent</a>
+      </div>
+
+      <!-- Growth -->
+      <div class="price-card popular">
+        <div class="popular-tag">MOST POPULAR</div>
+        <h2 class="tier-title">Growth (Multi-Tech / Clinics)</h2>
+        <div class="tier-desc">For growing service businesses and medical practices managing regular daily inbound volume.</div>
+        <div class="tier-price">$299 <span style="font-size: 16px; font-weight: 400; color: var(--bone-dim);">NZD</span></div>
+        <div class="tier-period">per month · billed monthly</div>
+        <ul class="feature-list">
+          <li><strong>300 call minutes</strong> included monthly</li>
+          <li>All Starter features included</li>
+          <li>Multi-calendar team routing (by technician / room)</li>
+          <li>Job management sync (Tradify, Fergus, ServiceM8)</li>
+          <li>Urgent emergency triage & live call transfers</li>
+          <li>Custom NZ or AU accent voice tuning</li>
+          <li>$0.85 NZD / min overage rate</li>
+        </ul>
+        <a href="/#demo" class="btn-cta">Build My Demo Agent</a>
+      </div>
+
+      <!-- Custom -->
+      <div class="price-card">
+        <h2 class="tier-title">Custom / Enterprise</h2>
+        <div class="tier-desc">For high-volume call centers, dental networks, legal firms, and multi-location franchises.</div>
+        <div class="tier-price">Custom</div>
+        <div class="tier-period">tailored to call volume</div>
+        <ul class="feature-list">
+          <li><strong>500+ call minutes</strong> pooled monthly</li>
+          <li>Practice management EHR sync (Cliniko, Halaxy, Medtech)</li>
+          <li>Custom multi-branch IVR & phone tree handling</li>
+          <li>Dedicated voice cloning of your brand voice</li>
+          <li>SLA-backed priority uptime & dedicated engineer</li>
+          <li>Custom CRM webhooks & bespoke database lookup</li>
+          <li>Volume-discounted overage rates</li>
+        </ul>
+        <a href="mailto:admin@quiktalkai.com?subject=Enterprise%20Inquiry" class="btn-cta btn-secondary">Contact Sales</a>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="comp-section">
+      <h2 class="comp-title">Cost Comparison: Human Receptionist vs. Traditional Call Center vs. Quiktalk AI</h2>
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Full-Time In-House Receptionist</th>
+            <th>Traditional Answering Service</th>
+            <th>Quiktalk AI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Annual Base Cost</strong></td>
+            <td>$55,000 – $65,000 NZD + Kiwisaver/ACC</td>
+            <td>$4,800 – $9,600 NZD ($1.80–$2.50/min)</td>
+            <td>From $1,788 NZD / year ($149/mo)</td>
+          </tr>
+          <tr>
+            <td><strong>Hours of Coverage</strong></td>
+            <td>40 hrs/week (Mon–Fri, 9am–5pm)</td>
+            <td>Usually business hours or high after-hours fee</td>
+            <td><strong>168 hrs/week (24/7/365 uninterrupted)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Simultaneous Calls</strong></td>
+            <td>1 call at a time (overflow goes to voicemail)</td>
+            <td>Limited by shared operator queues</td>
+            <td><strong>Unlimited simultaneous inbound calls</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Direct System Booking</strong></td>
+            <td>Yes, during work hours</td>
+            <td>Takes written message only</td>
+            <td><strong>Live qualification & direct CRM/calendar booking</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Sick Days & Holidays</strong></td>
+            <td>4 weeks annual leave + sick leave</td>
+            <td>Holiday surcharges apply</td>
+            <td><strong>Zero downtime, zero holiday surcharges</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-size: 12px; color: var(--bone-dim); margin-top: 14px; text-align: center;">
+        *Market benchmark based on Seek NZ salary averages for office receptionists ($55k–$65k p.a.) as of 2026.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div>&copy; 2026 Quiktalk AI. Built in Auckland, New Zealand.</div>
+    <div style="margin-top: 10px;">
+      <a href="/">Home</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="mailto:admin@quiktalkai.com">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>

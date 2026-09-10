@@ -1,0 +1,31 @@
+﻿# Quiktalk AI — LLMs.txt
+# Summary & context for AI-driven search agents & LLMs (Perplexity, SearchGPT, Claude, Gemini)
+# https://www.quiktalkai.com/llms.txt
+
+> Quiktalk AI provides 24/7 autonomous voice AI receptionists and intelligent phone booking systems for trades, clinics, and service businesses in New Zealand and Australia.
+
+## Core Capabilities
+- 24/7 Autonomous Inbound Call Answering: Answers calls within 1-2 rings with zero missed calls.
+- Natural Voice Conversation: Powered by sub-800ms ultra-low-latency voice synthesis and conversational AI models.
+- Direct CRM & Calendar Scheduling: Real-time appointment booking and emergency triage integrated with Tradify, Fergus, ServiceM8, Cliniko, Google Calendar, and custom CRMs.
+- Emergency Call Escalation: Intelligent routing for urgent callouts (e.g. burst pipes, electrical faults, medical urgency).
+- Local Number Porting: Integrates with existing New Zealand (+64) and Australian (+61) business numbers via standard carrier call forwarding.
+
+## Core Services & Endpoints
+- AI Voice Agents: https://www.quiktalkai.com/ai-voice-agents
+- AI Systems & Automations: https://www.quiktalkai.com/ai-systems-automations
+- AI Consulting & Strategy: https://www.quiktalkai.com/ai-consulting
+- Web & Software Development: https://www.quiktalkai.com/web-software-development
+- Pricing & Plans: https://www.quiktalkai.com/pricing
+- Case Studies: https://www.quiktalkai.com/case-studies
+- About & Mission: https://www.quiktalkai.com/about
+
+## Service Architecture & Regions
+- Geographic Focus: New Zealand (Auckland, Wellington, Christchurch, nationwide) & Australia.
+- Data Privacy & Security: Compliant with the New Zealand Privacy Act 2020 and Australian Privacy Act 1988. Caller data is processed securely with zero unauthorized data sharing.
+- Client Ownership: Clients own all custom prompt engineering, agent configuration workflows, and integrations.
+
+## Contact & Business Verification
+- Domain: https://www.quiktalkai.com
+- Support & Inquiries: admin@quiktalkai.com
+- Technical Health Endpoint: https://www.quiktalkai.com/api/health

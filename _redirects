@@ -1,0 +1,6 @@
+# Canonical Redirection Rules (QTK-021)
+# Single 301 hop from apex to canonical www domain
+
+http://quiktalkai.com/* https://www.quiktalkai.com/:splat 301!
+https://quiktalkai.com/* https://www.quiktalkai.com/:splat 301!
+http://www.quiktalkai.com/* https://www.quiktalkai.com/:splat 301!
