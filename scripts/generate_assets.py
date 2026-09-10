@@ -7,7 +7,7 @@ apple-touch-icon, and OpenGraph social share image for Quiktalk AI (QTK-014, QTK
 import os
 from PIL import Image, ImageDraw, ImageFont
 
-SRC_LOGO = os.path.join('assets', 'logo.png')
+SRC_LOGO = os.path.join('scripts', 'assets-src', 'logo-master.png')
 ASSETS_DIR = 'assets'
 ROOT_DIR = '.'
 

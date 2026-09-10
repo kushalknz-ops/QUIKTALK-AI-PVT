@@ -1,0 +1,12 @@
+{
+  "name": "quiktalkai-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Quiktalk AI marketing site + lead API (Cloudflare Pages)",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "python3 tests/verify_implementation.py --env local"
+  }
+}

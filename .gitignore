@@ -1,0 +1,5 @@
+.env
+node_modules/
+__pycache__/
+scratch_*.js
+.DS_Store

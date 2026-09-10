@@ -177,6 +177,12 @@
           if (item) item.classList.add('open');
         }
       });
+      btn.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          this.click();
+        }
+      });
     });
   }
 
@@ -629,9 +635,13 @@
     initAudioStub();
 
     // Wire Simulator buttons
-    const simPills = document.querySelectorAll('.sim-pill');
+    const simPills = document.querySelectorAll('.sim-pill, .sim-btn');
     simPills.forEach((pill, idx) => {
       pill.addEventListener('click', function () {
+        if (this.classList.contains('sim-btn')) {
+          runCallSimulation();
+          return;
+        }
         simPills.forEach(p => p.classList.remove('active'));
         this.classList.add('active');
         runCallSimulation(idx);
@@ -643,6 +653,15 @@
     if (simNextBtn) {
       simNextBtn.addEventListener('click', () => runCallSimulation());
     }
+
+    // Wire Side Progress Rail buttons (data-sec index map)
+    const railIds = ['hero', 'workflow', 'industries', 'comparison', 'integrations', 'faq', 'demo'];
+    document.querySelectorAll('#rail button').forEach(railBtn => {
+      railBtn.addEventListener('click', () => {
+        const i = parseInt(railBtn.getAttribute('data-sec'), 10);
+        if (!Number.isNaN(i) && railIds[i]) scrollToSec(railIds[i]);
+      });
+    });
 
     // Wire ROI Slider
     const roiSlider = document.getElementById('roiSlider');

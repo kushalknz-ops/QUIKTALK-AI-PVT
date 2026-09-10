@@ -8,6 +8,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
+  <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://www.quiktalkai.com/">
   <meta name="theme-color" content="#060608">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -193,7 +194,22 @@
       #pre { display: none !important; }
       .faq-a { display: block !important; }
       #gl { display: none !important; }
-    </style>
+    
+/* Cleanup pass: honeypot, form status, consent, roi note, footer hover, burger target */
+.hp-field{position:absolute!important;left:-9999px!important;top:auto!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+.form-status{display:block;margin:0 0 16px;padding:12px 16px;border-radius:12px;font-size:13px;line-height:1.5;text-align:left}
+.form-status.info{background:rgba(229,193,88,.12);border:1px solid var(--line);color:#f3d998}
+.form-status.success{background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.4);color:#a7f3d0}
+.form-status.error{background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.4);color:#fecaca}
+.consent-row{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:#a1a1aa;text-align:left;margin:0 0 18px;cursor:pointer}
+.consent-row input{margin-top:2px;accent-color:var(--cyan);flex:none}
+.consent-row a{color:#f3d998}
+.roi-note{font-size:11px;color:#a1a1aa;margin-top:16px;max-width:56ch;margin-left:auto;margin-right:auto}
+.foot a:hover{color:#fff!important}
+.nav-burger{width:44px!important;height:44px!important}
+.nav-burger i:nth-child(1){top:14px!important}
+.nav-burger i:nth-child(2){top:22px!important}
+</style>
   </noscript>
 
 <style>
@@ -203,7 +219,7 @@
   --ink-2: #0c0c10;
   --bone: #f8fafc;
   --bone-dim: #a1a1aa;
-  --muted: #71717a;
+  --muted: #a1a1aa;
   --line: rgba(229, 193, 88, 0.2);
   --line-soft: rgba(255, 255, 255, 0.08);
   --cyan: #e5c158;         /* Champagne Gold */
@@ -445,7 +461,7 @@ h1, h2, h3 { font-weight: 400; margin: 0; letter-spacing: -0.015em; }
 .stat-pill { display: flex; flex-direction: column; gap: 4px; }
 .stat-pill b { font-size: clamp(20px, 1.8vw, 24px); color: var(--cyan); font-weight: 600; }
 .stat-pill span { font-size: 11px; line-height: 1.4; color: #a1a1aa; font-weight: 400; text-transform: none; letter-spacing: normal; }
-.hero-stats-note { font-size: 11px; line-height: 1.5; color: #71717a; margin-top: 14px; font-style: italic; }
+.hero-stats-note { font-size: 11px; line-height: 1.5; color: #a1a1aa; margin-top: 14px; font-style: italic; }
 
 .hero-spacer { flex: 1 1 auto; min-height: clamp(100px, 16vh, 220px); }
 .hero-foot { padding-bottom: clamp(24px, 4vh, 48px); z-index: 2; }
@@ -456,7 +472,7 @@ h1, h2, h3 { font-weight: 400; margin: 0; letter-spacing: -0.015em; }
 .chip { display: flex; gap: 14px; align-items: flex-start; cursor: pointer; }
 .chip .num { line-height: 1; transition: color 0.4s, transform 0.4s var(--ease-out); }
 .chip b { display: block; font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bone-dim); margin-bottom: 4px; transition: color 0.3s; }
-.chip p { margin: 0; font-size: 11px; line-height: 1.5; color: #71717a; transition: color 0.3s; }
+.chip p { margin: 0; font-size: 11px; line-height: 1.5; color: #a1a1aa; transition: color 0.3s; }
 .chip:hover .num { color: var(--cyan); transform: translateY(-2px); }
 .chip:hover b { color: var(--bone); }
 .chip.on .num { color: var(--cyan); }
@@ -710,7 +726,7 @@ h1, h2, h3 { font-weight: 400; margin: 0; letter-spacing: -0.015em; }
   outline: none; transition: border-color 0.3s;
 }
 .input-field:focus { border-color: var(--cyan); box-shadow: 0 0 16px rgba(229,193,88,0.25); }
-.input-field::placeholder { color: #71717a; }
+.input-field::placeholder { color: #a1a1aa; }
 textarea.input-field { resize: none; grid-column: 1 / -1; }
 .btn-submit {
   width: 100%; background: linear-gradient(135deg, #e5c158, #f3d998); color: #000; font-size: 11px; font-weight: 700;
@@ -731,7 +747,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
 /* — Footer */
 .foot { position: relative; padding: clamp(60px, 9vh, 110px) var(--pad) 40px; border-top: 1px solid var(--line-soft); }
 .foot-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.1fr; gap: clamp(24px, 3vw, 50px); align-items: start; }
-.foot-brand p { max-width: 44ch; font-size: 14px; color: #71717a; margin-top: 16px; }
+.foot-brand p { max-width: 44ch; font-size: 14px; color: #a1a1aa; margin-top: 16px; }
 .foot-base { display: flex; justify-content: space-between; align-items: center; margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line-soft); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
 
 /* Progress Rail */
@@ -777,7 +793,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
 <!-- Preloader -->
 <div id="pre">
   <div class="pre-in">
-    <div class="pre-mark"><img src="assets/logo.png" alt="Quiktalk AI"></div>
+    <div class="pre-mark"><img src="assets/logo-64.webp" srcset="assets/logo-64.webp 64w, assets/logo-192.webp 192w, assets/logo-384.webp 384w" sizes="64px" width="54" height="54" alt="Quiktalk AI" fetchpriority="high"></div>
     <div class="pre-sub">QUIKTALK AI · VOICE INTELLIGENCE</div>
     <div class="pre-bar"><i id="pre-bar-fill"></i></div>
     <div class="pre-meta"><span>INITIALIZING VOLUMETRIC 3D ENGINE</span><b id="pre-num">0%</b></div>
@@ -791,14 +807,14 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
 
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#hero" onclick="toggleMenu()">Home</a>
-  <a href="#workflow" onclick="toggleMenu()">How It Works</a>
-  <a href="#industries" onclick="toggleMenu()">Industries</a>
-  <a href="#comparison" onclick="toggleMenu()">Why Quiktalk AI</a>
-  <a href="#integrations" onclick="toggleMenu()">Integrations</a>
-  <a href="#about" onclick="toggleMenu()">About Us</a>
-  <a href="#faq" onclick="toggleMenu()">FAQ</a>
-  <a href="#demo" onclick="toggleMenu()" style="color: var(--cyan)">Get A Demo</a>
+  <a href="#hero">Home</a>
+  <a href="#workflow">How It Works</a>
+  <a href="#industries">Industries</a>
+  <a href="#comparison">Why Quiktalk AI</a>
+  <a href="#integrations">Integrations</a>
+  <a href="#about">About Us</a>
+  <a href="#faq">FAQ</a>
+  <a href="#demo" style="color: var(--cyan)">Get A Demo</a>
 </div>
 
 <!-- Main Page -->
@@ -808,7 +824,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
   <!-- Navigation -->
   <header class="nav" id="main-nav">
     <div class="brand">
-      <img src="assets/logo.png" alt="Quiktalk AI Logo" class="brand-img">
+      <img src="assets/logo-64.webp" srcset="assets/logo-64.webp 64w, assets/logo-192.webp 192w, assets/logo-384.webp 384w" sizes="64px" width="38" height="38" alt="Quiktalk AI Logo" class="brand-img">
       <div class="brand-tx">
         <b>QUIKTALK AI</b>
         <i>PERSONALISED VOICE AGENTS</i>
@@ -826,18 +842,18 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
       <a href="#faq" class="nav-link">FAQ</a>
       <a href="#demo" class="nav-cta">Get A Demo</a>
     </nav>
-    <button class="nav-burger" id="burger" aria-label="Toggle menu" onclick="toggleMenu()"><i></i><i></i></button>
+    <button class="nav-burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu"><i></i><i></i></button>
   </header>
 
   <!-- Side Progress Rail -->
   <div class="rail" id="rail">
-    <button class="on" data-sec="0" title="Overview" onclick="scrollToSec('hero')"><i></i></button>
-    <button data-sec="1" title="How It Works" onclick="scrollToSec('workflow')"><i></i></button>
-    <button data-sec="2" title="Industries" onclick="scrollToSec('industries')"><i></i></button>
-    <button data-sec="3" title="Why Quiktalk AI" onclick="scrollToSec('comparison')"><i></i></button>
-    <button data-sec="4" title="Integrations" onclick="scrollToSec('integrations')"><i></i></button>
-    <button data-sec="5" title="FAQ" onclick="scrollToSec('faq')"><i></i></button>
-    <button data-sec="6" title="Demo" onclick="scrollToSec('demo')"><i></i></button>
+    <button class="on" data-sec="0" title="Overview"><i></i></button>
+    <button data-sec="1" title="How It Works"><i></i></button>
+    <button data-sec="2" title="Industries"><i></i></button>
+    <button data-sec="3" title="Why Quiktalk AI"><i></i></button>
+    <button data-sec="4" title="Integrations"><i></i></button>
+    <button data-sec="5" title="FAQ"><i></i></button>
+    <button data-sec="6" title="Demo"><i></i></button>
   </div>
 
   <!-- CHAPTER I: HERO -->
@@ -880,7 +896,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
     <div class="peek">
       <div class="peek-fr">
         <div class="sim-header">
-          <img src="assets/logo.png" alt="Headset Logo" class="sim-avatar">
+          <img src="assets/logo-64.webp" srcset="assets/logo-64.webp 64w, assets/logo-192.webp 192w, assets/logo-384.webp 384w" sizes="64px" width="34" height="34" alt="Headset Logo" class="sim-avatar" loading="lazy">
           <div class="sim-info">
             <div class="sim-name">AI VOICE RECEPTIONIST</div>
             <div class="sim-status"><span></span> READY TO SIMULATE</div>
@@ -898,7 +914,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
           <span id="simText">"Hello! Thank you for calling. I can answer your pricing questions and book your appointment right now. Would Tuesday at 2 PM work for you?"</span>
         </div>
 
-        <button class="sim-btn" onclick="runCallSimulation()">▶ TEST SIMULATED CALL</button>
+        <button class="sim-btn">▶ TEST SIMULATED CALL</button>
     </div>
   </section>
 
@@ -1133,7 +1149,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
           <span>Monthly Inbound Calls: <b id="callCountLabel">150 calls</b></span>
           <span>Est. Missed Calls After-Hours (~30%): <b id="missedLabel" style="color: var(--red);">45 calls</b></span>
         </label>
-        <input type="range" min="30" max="1000" value="150" class="roi-slider" id="roiSlider" oninput="updateRoiCalc()">
+        <input type="range" min="30" max="1000" value="150" class="roi-slider" id="roiSlider" aria-label="Estimated inbound calls per month">
       </div>
 
       <div class="roi-result">
@@ -1146,6 +1162,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
           <span>Est. Revenue Saved / Mo</span>
         </div>
       </div>
+      <div class="roi-note">Illustrative estimate — assumes ~30% of after-hours calls missed, 70% recaptured via instant 24/7 answer, $500 average job value.</div>
     </div>
   </section>
 
@@ -1257,7 +1274,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
 
     <div class="faq-list" style="margin-top: 24px;">
       <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-1" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-1">
           <span>What does Quiktalk AI do?</span>
           <span class="icon">+</span>
         </div>
@@ -1267,7 +1284,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
       </div>
 
       <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-2" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-2">
           <span>Will callers know they are talking to an AI?</span>
           <span class="icon">+</span>
         </div>
@@ -1277,7 +1294,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
       </div>
 
       <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-3" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-3">
           <span>Can I keep my existing business phone number?</span>
           <span class="icon">+</span>
         </div>
@@ -1287,7 +1304,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
       </div>
 
       <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-4" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-4">
           <span>How much does an AI receptionist cost?</span>
           <span class="icon">+</span>
         </div>
@@ -1297,7 +1314,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
       </div>
 
       <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-5" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-5">
           <span>How long does setup take?</span>
           <span class="icon">+</span>
         </div>
@@ -1307,7 +1324,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
       </div>
 
       <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-6" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-6">
           <span>What happens on complex or emergency calls?</span>
           <span class="icon">+</span>
         </div>
@@ -1317,7 +1334,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
       </div>
 
       <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-7" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-7">
           <span>Does it book appointments into my calendar automatically?</span>
           <span class="icon">+</span>
         </div>
@@ -1327,7 +1344,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
       </div>
 
       <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-8" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-8">
           <span>Can I listen to calls or read transcripts?</span>
           <span class="icon">+</span>
         </div>
@@ -1337,7 +1354,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
       </div>
 
       <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-9" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-9">
           <span>Which tools does it integrate with?</span>
           <span class="icon">+</span>
         </div>
@@ -1347,7 +1364,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
       </div>
 
       <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-10" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-10">
           <span>Is it legal to answer and record calls this way?</span>
           <span class="icon">+</span>
         </div>
@@ -1357,7 +1374,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
       </div>
 
       <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-11" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-11">
           <span>Do I need new hardware or software?</span>
           <span class="icon">+</span>
         </div>
@@ -1367,7 +1384,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
       </div>
 
       <div class="faq-item">
-        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-12" onclick="toggleFaq(this)">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-12">
           <span>What if the AI can't answer a caller's question?</span>
           <span class="icon">+</span>
         </div>
@@ -1391,9 +1408,9 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
     </div>
 
     <div class="form-wrap">
-      <form id="leadForm" onsubmit="handleFormSubmit(event)">
+      <form id="leadForm">
         <!-- Hidden Honeypot Trap for Spam Protection -->
-        <input type="text" name="_hp" id="leadHp" style="display:none !important;" tabindex="-1" autocomplete="off">
+        <input type="text" name="_hp" id="leadHp" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <div class="form-grid">
           <div>
@@ -1429,6 +1446,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
         <!-- Accessible Live Submission Status Alert Container (Invisible by default) -->
         <div id="formStatus" class="sr-only" aria-live="polite"></div>
 
+        <label class="consent-row"><input type="checkbox" name="marketingConsent" value="on"><span>Email me my free demo-agent setup link and occasional product updates. See <a href="/privacy-policy">Privacy Policy</a>.</span></label>
         <button type="submit" class="btn-submit" id="submitBtn">Build my free demo agent</button>
         <div style="font-size: 11px; color: var(--muted); text-align: center; margin-top: 14px; letter-spacing: 0.08em; text-transform: uppercase;">
           We reply within 1 business day · No credit card required · <a href="/privacy-policy" style="color: var(--cyan); text-decoration: underline;">Privacy Policy</a>
@@ -1442,7 +1460,7 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="brand" style="margin-bottom: 12px;">
-          <img src="assets/logo.png" alt="Quiktalk AI Logo" class="brand-img">
+          <img src="assets/logo-64.webp" srcset="assets/logo-64.webp 64w, assets/logo-192.webp 192w, assets/logo-384.webp 384w" sizes="64px" width="38" height="38" alt="Quiktalk AI Logo" class="brand-img">
           <div class="brand-tx">
             <b>QUIKTALK AI</b>
             <i>PERSONALISED VOICE AGENTS</i>
@@ -1456,28 +1474,28 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
       <div>
         <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 16px;">EXPLORE</div>
         <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 13.5px;">
-          <li><a href="#workflow" style="color: var(--bone-dim); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--bone-dim)'">How it works</a></li>
-          <li><a href="#industries" style="color: var(--bone-dim); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--bone-dim)'">Industries</a></li>
-          <li><a href="#comparison" style="color: var(--bone-dim); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--bone-dim)'">Why Quiktalk AI</a></li>
-          <li><a href="#integrations" style="color: var(--bone-dim); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--bone-dim)'">Integrations</a></li>
-          <li><a href="#faq" style="color: var(--bone-dim); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--bone-dim)'">FAQ</a></li>
+          <li><a href="#workflow" style="color: var(--bone-dim); transition: color 0.2s;">How it works</a></li>
+          <li><a href="#industries" style="color: var(--bone-dim); transition: color 0.2s;">Industries</a></li>
+          <li><a href="#comparison" style="color: var(--bone-dim); transition: color 0.2s;">Why Quiktalk AI</a></li>
+          <li><a href="#integrations" style="color: var(--bone-dim); transition: color 0.2s;">Integrations</a></li>
+          <li><a href="#faq" style="color: var(--bone-dim); transition: color 0.2s;">FAQ</a></li>
         </ul>
       </div>
 
       <div>
         <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 16px;">SERVICES</div>
         <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 13.5px;">
-          <li><a href="#demo" style="color: var(--bone-dim); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--bone-dim)'">AI Voice Agents</a></li>
-          <li><a href="#demo" style="color: var(--bone-dim); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--bone-dim)'">AI Systems & Automations</a></li>
-          <li><a href="#demo" style="color: var(--bone-dim); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--bone-dim)'">AI Consulting & Roadmaps</a></li>
-          <li><a href="#demo" style="color: var(--bone-dim); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--bone-dim)'">Web & Software Development</a></li>
+          <li><a href="#demo" style="color: var(--bone-dim); transition: color 0.2s;">AI Voice Agents</a></li>
+          <li><a href="#demo" style="color: var(--bone-dim); transition: color 0.2s;">AI Systems & Automations</a></li>
+          <li><a href="#demo" style="color: var(--bone-dim); transition: color 0.2s;">AI Consulting & Roadmaps</a></li>
+          <li><a href="#demo" style="color: var(--bone-dim); transition: color 0.2s;">Web & Software Development</a></li>
         </ul>
       </div>
 
       <div>
         <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 16px;">CONTACT</div>
         <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 13.5px;">
-          <li><a href="mailto:admin@quiktalkai.com" style="color: var(--bone-dim); transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--bone-dim)'">admin@quiktalkai.com</a></li>
+          <li><a href="mailto:admin@quiktalkai.com" style="color: var(--bone-dim); transition: color 0.2s;">admin@quiktalkai.com</a></li>
           <li><a href="#demo" style="color: var(--cyan); font-weight: 600; text-decoration: underline;">Book a free demo call</a></li>
         </ul>
       </div>
@@ -1492,619 +1510,9 @@ textarea.input-field { resize: none; grid-column: 1 / -1; }
 </div>
 
 <!-- Three.js Engine Script -->
-<script src="assets/js/analytics.js" defer></script>
-<script src="assets/three.min.js"></script>
-<script>
-// ============================================================= Preloader Animation
-let progress = 0;
-const preFill = document.getElementById('pre-bar-fill');
-const preNum = document.getElementById('pre-num');
-const preEl = document.getElementById('pre');
-
-function finishPreloader() {
-  if (preEl && !preEl.classList.contains('done')) {
-    if (preNum) preNum.innerText = '100%';
-    if (preFill) preFill.style.right = '0%';
-    setTimeout(() => {
-      preEl.classList.add('done');
-    }, 150);
-  }
-}
-
-const loadInterval = setInterval(() => {
-  progress += Math.floor(Math.random() * 18) + 12;
-  if (progress >= 100) {
-    progress = 100;
-    clearInterval(loadInterval);
-    finishPreloader();
-  }
-  if (preFill) preFill.style.right = (100 - progress) + '%';
-  if (preNum) preNum.innerText = progress + '%';
-}, 40);
-
-window.addEventListener('load', finishPreloader);
-setTimeout(finishPreloader, 1200);
-
-// Navigation helper with precise header offset handling for fixed navbar
-function scrollToSec(id) {
-  const el = document.getElementById(id);
-  if (el) {
-    // If the element has a .sec-head inside it, target the heading so it sits cleanly below the navbar
-    const targetNode = (id === 'process') ? el : (el.querySelector('.sec-head') || el);
-    const navHeight = 74; // Navbar height
-    const paddingOffset = (id === 'process') ? 120 : 24; // 24px padding under navbar for section heads
-    const targetTop = targetNode.getBoundingClientRect().top + window.pageYOffset - navHeight - paddingOffset;
-    window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
-  }
-}
-function toggleMenu() {
-  document.getElementById('mobile-menu').classList.toggle('open');
-}
-
-// Global anchor scroll handler for perfect alignment of sections like Process
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href && href.length > 1) {
-        const targetEl = document.getElementById(href.substring(1));
-        if (targetEl) {
-          e.preventDefault();
-          scrollToSec(href.substring(1));
-        }
-      }
-    });
-  });
-});
-
-// Call Simulator Dialog Script Cycles
-const simDialogs = [
-  '"Hello! Thank you for calling Acme Roofing. I can help dispatch an emergency technician or schedule your roof inspection right now."',
-  '"Thanks for calling Dental Care! I have an opening this Thursday at 10 AM with Dr. Smith. Should I confirm that slot for you?"',
-  '"Welcome to Apex Law. I can qualify your consultation details and route your case to our senior partner instantly."'
-];
-let simIndex = 0;
-
-function runCallSimulation() {
-  const textEl = document.getElementById('simText');
-  simIndex = (simIndex + 1) % simDialogs.length;
-  textEl.style.opacity = 0;
-  setTimeout(() => {
-    textEl.innerText = simDialogs[simIndex];
-    textEl.style.opacity = 1;
-  }, 200);
-}
-
-// ROI & Revenue Calculator Logic
-function updateRoiCalc() {
-  const calls = parseInt(document.getElementById('roiSlider').value);
-  document.getElementById('callCountLabel').innerText = calls + ' calls';
-
-  const missedCalls = Math.round(calls * 0.3);
-  document.getElementById('missedLabel').innerText = missedCalls + ' calls';
-
-  const recapturedLeads = Math.round(missedCalls * 0.7);
-  document.getElementById('recapturedLeads').innerText = recapturedLeads + ' Leads';
-
-  const avgJobValue = 500; // $500 average job revenue
-  const revenue = (recapturedLeads * avgJobValue).toLocaleString();
-  document.getElementById('recapturedRevenue').innerText = '$' + revenue;
-}
-
-// Mouse movement tracking for 3D tilt
-let mouseX = 0, mouseY = 0;
-let targetMouseX = 0, targetMouseY = 0;
-window.addEventListener('mousemove', (e) => {
-  targetMouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-  targetMouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-});
-
-// ============================================================= Three.js WebGL 3D Headset Scene
-const canvas = document.getElementById('gl');
-const scene = new THREE.Scene();
-scene.fog = new THREE.FogExp2(0x060608, 0.012);
-
-const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 2, 22);
-
-let renderer;
-try {
-  renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: window.devicePixelRatio < 2, alpha: true, powerPreference: 'high-performance' });
-} catch (e) {
-  console.warn('[Three.js] WebGL not supported, running with canvas hidden');
-  if (canvas) canvas.style.display = 'none';
-}
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-// HIGH-CONTRAST STUDIO ENVIRONMENT MAP (Exact Match to Logo Mirror Chrome)
-const generateChromeEnvMap = (renderer) => {
-  const pmremGenerator = new THREE.PMREMGenerator(renderer);
-  pmremGenerator.compileEquirectangularShader();
-
-  const envScene = new THREE.Scene();
-  envScene.background = new THREE.Color(0x020204);
-
-  // Softbox Top White Highlight Box
-  const topLight = new THREE.Mesh(
-    new THREE.PlaneGeometry(60, 30),
-    new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide })
-  );
-  topLight.position.set(0, 25, 5);
-  topLight.rotation.x = Math.PI / 2.2;
-  envScene.add(topLight);
-
-  // Softbox Right Edge Specular Strip
-  const rimStrip = new THREE.Mesh(
-    new THREE.PlaneGeometry(10, 60),
-    new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide })
-  );
-  rimStrip.position.set(25, 0, 10);
-  rimStrip.rotation.y = Math.PI / 2.5;
-  envScene.add(rimStrip);
-
-  const renderTarget = pmremGenerator.fromScene(envScene);
-  pmremGenerator.dispose();
-  return renderTarget.texture;
-};
-
-const chromeEnvMap = generateChromeEnvMap(renderer);
-
-// STUDIO REALISTIC LIGHTING SYSTEM (Supercharged Light Intensity)
-const ambientLight = new THREE.AmbientLight(0xffffff, 2.2);
-scene.add(ambientLight);
-
-// Key Studio White Light
-const keyLight = new THREE.DirectionalLight(0xffffff, 10.0);
-keyLight.position.set(10, 20, 15);
-scene.add(keyLight);
-
-// Specular Rim Spot Light
-const rimLight = new THREE.SpotLight(0xffffff, 12.0);
-rimLight.position.set(-10, -10, 20);
-scene.add(rimLight);
-
-// Champagne Gold Accent Lights
-const bgCyanLight = new THREE.PointLight(0xe5c158, 4.0, 70);
-bgCyanLight.position.set(25, -12, -15);
-scene.add(bgCyanLight);
-
-const bgVioletLight = new THREE.PointLight(0xf3d998, 4.0, 70);
-bgVioletLight.position.set(-25, -15, -15);
-scene.add(bgVioletLight);
-
-// ============================================================= EXACT 3D LOGO RECREATION: HIGH-CONTRAST LIQUID CHROME
-const headsetGroup = new THREE.Group();
-
-// High-Contrast Liquid Silver Mirror Chrome Material
-const chromeMat = new THREE.MeshStandardMaterial({
-  color: 0x666677,          // Luminous platinum silver core tone
-  metalness: 1.0,           // 100% pure metal
-  roughness: 0.02,          // Hyper-polished mirror surface
-  envMap: chromeEnvMap,     // Studio reflection map
-  envMapIntensity: 12.0
-});
-
-// Procedural Microphone Mesh Texture (Realistic Perforated Metal Grille / Cross-Hatch Net)
-const createMicNetTexture = () => {
-  const canvas = document.createElement('canvas');
-  canvas.width = 512;
-  canvas.height = 512;
-  const ctx = canvas.getContext('2d');
-
-  // Deep matte black base
-  ctx.fillStyle = '#060608';
-  ctx.fillRect(0, 0, 512, 512);
-
-  // Cross-hatch wire mesh weave
-  ctx.lineWidth = 3;
-  const step = 16;
-
-  ctx.strokeStyle = '#282834';
-  for (let x = -512; x < 1024; x += step) {
-    ctx.beginPath();
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x + 512, 512);
-    ctx.stroke();
-  }
-
-  ctx.strokeStyle = '#1e1e28';
-  for (let x = -512; x < 1024; x += step) {
-    ctx.beginPath();
-    ctx.moveTo(x, 512);
-    ctx.lineTo(x + 512, 0);
-    ctx.stroke();
-  }
-
-  // Micro perforation dots
-  ctx.fillStyle = '#020204';
-  for (let x = 0; x < 512; x += step) {
-    for (let y = 0; y < 512; y += step) {
-      ctx.beginPath();
-      ctx.arc(x + step / 2, y + step / 2, 2.5, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  const texture = new THREE.CanvasTexture(canvas);
-  texture.wrapS = THREE.RepeatWrapping;
-  texture.wrapT = THREE.RepeatWrapping;
-  texture.repeat.set(6, 6);
-  return texture;
-};
-
-// Procedural Bump Map for 3D tactile grille net depth
-const createMicBumpTexture = () => {
-  const canvas = document.createElement('canvas');
-  canvas.width = 256;
-  canvas.height = 256;
-  const ctx = canvas.getContext('2d');
-
-  ctx.fillStyle = '#808080';
-  ctx.fillRect(0, 0, 256, 256);
-
-  ctx.lineWidth = 3;
-  const step = 16;
-  ctx.strokeStyle = '#ffffff';
-
-  for (let x = -256; x < 512; x += step) {
-    ctx.beginPath();
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x + 256, 256);
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(x, 256);
-    ctx.lineTo(x + 256, 0);
-    ctx.stroke();
-  }
-
-  ctx.fillStyle = '#000000';
-  for (let x = 0; x < 256; x += step) {
-    for (let y = 0; y < 256; y += step) {
-      ctx.beginPath();
-      ctx.arc(x + step / 2, y + step / 2, 3.0, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  const bumpTex = new THREE.CanvasTexture(canvas);
-  bumpTex.wrapS = THREE.RepeatWrapping;
-  bumpTex.wrapT = THREE.RepeatWrapping;
-  bumpTex.repeat.set(6, 6);
-  return bumpTex;
-};
-
-const micNetTexture = createMicNetTexture();
-const micBumpTexture = createMicBumpTexture();
-
-// Temple Rest Pad Material (Solid Deep Obsidian Black)
-const templePadMat = new THREE.MeshBasicMaterial({
-  color: 0x0a0a0e
-});
-
-// Microphone Head Material (Matte Obsidian Black with Tactile Wire Net Texture)
-const micNetMat = new THREE.MeshStandardMaterial({
-  color: 0x040406,
-  map: micNetTexture,
-  bumpMap: micBumpTexture,
-  bumpScale: 0.1,
-  roughness: 0.35,
-  metalness: 0.5,
-  envMap: chromeEnvMap,
-  envMapIntensity: 0.4
-});
-
-// 1. Continuous Metallic Dual Arc Headband Geometry
-const headbandCurve = new THREE.CatmullRomCurve3([
-  new THREE.Vector3(-3.2, -1.6, 0),
-  new THREE.Vector3(-3.1, 0.8, 0),
-  new THREE.Vector3(-1.8, 3.0, 0),
-  new THREE.Vector3(0, 3.6, 0),
-  new THREE.Vector3(1.8, 3.0, 0),
-  new THREE.Vector3(3.1, 0.8, 0),
-  new THREE.Vector3(3.2, -1.6, 0)
-]);
-const headbandGeo = new THREE.TubeGeometry(headbandCurve, 64, 0.22, 16, false);
-const headbandMesh = new THREE.Mesh(headbandGeo, chromeMat);
-headsetGroup.add(headbandMesh);
-
-// 2. LEFT SIDE: Single Deluxe Dual-Tiered Chrome Ear Cup & Cushion (As seen in Logo)
-const leftEarCupGroup = new THREE.Group();
-
-// Outer Chrome Housing Shell
-const outerCupGeo = new THREE.CylinderGeometry(1.4, 1.4, 0.6, 40);
-const outerCupMesh = new THREE.Mesh(outerCupGeo, chromeMat);
-outerCupMesh.rotation.x = Math.PI / 2;
-leftEarCupGroup.add(outerCupMesh);
-
-// Double-Tiered Cushion Rings
-const cushionOuterGeo = new THREE.TorusGeometry(1.3, 0.3, 24, 40);
-const cushionOuterMesh = new THREE.Mesh(cushionOuterGeo, chromeMat);
-cushionOuterMesh.position.z = 0.3;
-leftEarCupGroup.add(cushionOuterMesh);
-
-const cushionInnerGeo = new THREE.TorusGeometry(0.85, 0.22, 20, 32);
-const cushionInnerMesh = new THREE.Mesh(cushionInnerGeo, chromeMat);
-cushionInnerMesh.position.z = 0.45;
-leftEarCupGroup.add(cushionInnerMesh);
-
-// Chrome Mounting Hinge Collar & Pin
-const yokeJointGeo = new THREE.CylinderGeometry(0.38, 0.38, 0.6, 24);
-const leftYokeJoint = new THREE.Mesh(yokeJointGeo, chromeMat);
-leftYokeJoint.position.set(0, 0.9, 0);
-leftEarCupGroup.add(leftYokeJoint);
-
-const leftPinGeo = new THREE.CylinderGeometry(0.2, 0.2, 0.3, 16);
-const leftPin = new THREE.Mesh(leftPinGeo, chromeMat);
-leftPin.rotation.x = Math.PI / 2;
-leftPin.position.set(0, 0.9, 0.2);
-leftEarCupGroup.add(leftPin);
-
-leftEarCupGroup.position.set(-3.2, -1.8, 0);
-leftEarCupGroup.rotation.y = 0.3;
-headsetGroup.add(leftEarCupGroup);
-
-// 3. RIGHT SIDE: Sleek Chrome Stem & Dark Temple Support Pad (Single-Sided Design)
-const rightTempleGroup = new THREE.Group();
-
-const templeCollarGeo = new THREE.CylinderGeometry(0.36, 0.36, 0.5, 24);
-const templeCollarMesh = new THREE.Mesh(templeCollarGeo, chromeMat);
-templeCollarMesh.position.set(0, 0.6, 0);
-rightTempleGroup.add(templeCollarMesh);
-
-const templePadGeo = new THREE.CylinderGeometry(0.6, 0.6, 0.25, 32);
-const templePadMesh = new THREE.Mesh(templePadGeo, templePadMat);
-templePadMesh.rotation.x = Math.PI / 2;
-templePadMesh.position.set(0, 0.6, 0.15);
-rightTempleGroup.add(templePadMesh);
-
-rightTempleGroup.position.set(3.2, -1.8, 0);
-rightTempleGroup.rotation.y = -0.3;
-headsetGroup.add(rightTempleGroup);
-
-// 4. Curved Chrome Microphone Boom Arm (Curves around from Right Side Hinge to Mouth)
-const boomCurve = new THREE.CatmullRomCurve3([
-  new THREE.Vector3(3.2, -1.6, 0.1),
-  new THREE.Vector3(2.5, -3.0, 0.8),
-  new THREE.Vector3(0.5, -3.8, 2.2),
-  new THREE.Vector3(-1.2, -3.4, 2.8)
-]);
-const boomGeo = new THREE.TubeGeometry(boomCurve, 40, 0.1, 16, false);
-const boomMesh = new THREE.Mesh(boomGeo, chromeMat);
-headsetGroup.add(boomMesh);
-
-// Microphone Foam Tip Bulb & Chrome Tip Accent Collar
-const micHeadGroup = new THREE.Group();
-
-const micFoamGeo = new THREE.SphereGeometry(0.58, 32, 24);
-const micFoamMesh = new THREE.Mesh(micFoamGeo, micNetMat);
-micHeadGroup.add(micFoamMesh);
-
-const micRingGeo = new THREE.TorusGeometry(0.59, 0.05, 16, 32);
-const micRingMesh = new THREE.Mesh(micRingGeo, chromeMat);
-micHeadGroup.add(micRingMesh);
-
-const micTipGeo = new THREE.CylinderGeometry(0.18, 0.18, 0.35, 16);
-const micTipMesh = new THREE.Mesh(micTipGeo, chromeMat);
-micTipMesh.rotation.z = Math.PI / 2;
-micTipMesh.position.x = -0.32;
-micHeadGroup.add(micTipMesh);
-
-micHeadGroup.position.set(-1.2, -3.4, 2.8);
-headsetGroup.add(micHeadGroup);
-
-// 5. Pro Max Halo Gyro Rings (Champagne Gold & Titanium White)
-const gyro1Geo = new THREE.TorusGeometry(5.2, 0.04, 16, 100);
-const gyro1Mat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.65 });
-const gyro1Mesh = new THREE.Mesh(gyro1Geo, gyro1Mat);
-headsetGroup.add(gyro1Mesh);
-
-const gyro2Geo = new THREE.TorusGeometry(6.2, 0.03, 16, 100);
-const gyro2Mat = new THREE.MeshBasicMaterial({ color: 0xe5c158, transparent: true, opacity: 0.45 });
-const gyro2Mesh = new THREE.Mesh(gyro2Geo, gyro2Mat);
-gyro2Mesh.rotation.x = Math.PI / 3;
-headsetGroup.add(gyro2Mesh);
-
-// Dynamic 3D Scene Responsive Layout Placement
-function updateResponsiveLayout() {
-  if (window.innerWidth < 768) {
-    headsetGroup.position.set(0, 1, -2);
-    headsetGroup.scale.set(0.75, 0.75, 0.75);
-  } else {
-    headsetGroup.position.set(8, 2, 2);
-    headsetGroup.scale.set(1.0, 1.0, 1.0);
-  }
-}
-updateResponsiveLayout();
-
-scene.add(headsetGroup);
-
-// ============================================================= Audio Frequency Waveform Terrain Grid
-const gridWidth = 80;
-const gridHeight = 80;
-const gridGeo = new THREE.PlaneGeometry(65, 65, gridWidth - 1, gridHeight - 1);
-gridGeo.rotateX(-Math.PI / 2);
-
-const gridMat = new THREE.MeshBasicMaterial({
-  color: 0xe5c158,
-  wireframe: true,
-  transparent: true,
-  opacity: 0.14
-});
-const gridMesh = new THREE.Mesh(gridGeo, gridMat);
-gridMesh.position.y = -6;
-scene.add(gridMesh);
-
-// Sound Particle Cloud
-const particleCount = 1400;
-const particleGeo = new THREE.BufferGeometry();
-const particlePos = new Float32Array(particleCount * 3);
-const particleColors = new Float32Array(particleCount * 3);
-
-const colorCyan = new THREE.Color(0xe5c158);
-const colorViolet = new THREE.Color(0xf3d998);
-
-for (let i = 0; i < particleCount; i++) {
-  particlePos[i * 3] = (Math.random() - 0.5) * 90;
-  particlePos[i * 3 + 1] = (Math.random() - 0.5) * 45;
-  particlePos[i * 3 + 2] = (Math.random() - 0.5) * 90;
-
-  const mixedColor = colorCyan.clone().lerp(colorViolet, Math.random());
-  particleColors[i * 3] = mixedColor.r;
-  particleColors[i * 3 + 1] = mixedColor.g;
-  particleColors[i * 3 + 2] = mixedColor.b;
-}
-
-particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePos, 3));
-particleGeo.setAttribute('color', new THREE.BufferAttribute(particleColors, 3));
-
-const particleMat = new THREE.PointsMaterial({
-  size: 0.26,
-  vertexColors: true,
-  transparent: true,
-  opacity: 0.65
-});
-const particleSystem = new THREE.Points(particleGeo, particleMat);
-scene.add(particleSystem);
-
-// Scroll Camera Target Logic
-let scrollY = 0;
-let targetScrollY = 0;
-
-window.addEventListener('scroll', () => {
-  targetScrollY = window.scrollY;
-  const nav = document.getElementById('main-nav');
-  if (window.scrollY > 40) {
-    nav.classList.add('stuck');
-  } else {
-    nav.classList.remove('stuck');
-  }
-
-  // Update Rail Indicator
-  const sections = ['hero', 'workflow', 'industries', 'comparison', 'integrations', 'faq', 'demo'];
-  const railBtns = document.querySelectorAll('#rail button');
-  sections.forEach((secId, idx) => {
-    const el = document.getElementById(secId);
-    if (el) {
-      const rect = el.getBoundingClientRect();
-      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 3) {
-        railBtns.forEach(b => b.classList.remove('on'));
-        if (railBtns[idx]) railBtns[idx].classList.add('on');
-      }
-    }
-  });
-});
-
-// Render Loop
-let clock = new THREE.Clock();
-
-let isTabVisible = true;
-let isHeroVisible = true;
-let isLoopRunning = true;
-let cachedScrollHeight = document.body.scrollHeight || 3000;
-
-document.addEventListener('visibilitychange', () => {
-  isTabVisible = !document.hidden;
-  if (isTabVisible && isHeroVisible && !isLoopRunning) {
-    isLoopRunning = true;
-    requestAnimationFrame(animate);
-  }
-});
-
-if (window.IntersectionObserver) {
-  const heroEl = document.getElementById('hero');
-  if (heroEl) {
-    new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        isHeroVisible = entry.isIntersecting;
-        if (isTabVisible && isHeroVisible && !isLoopRunning) {
-          isLoopRunning = true;
-          requestAnimationFrame(animate);
-        }
-      });
-    }, { threshold: 0.05 }).observe(heroEl);
-  }
-}
-
-window.addEventListener('resize', () => {
-  cachedScrollHeight = document.body.scrollHeight || 3000;
-}, { passive: true });
-
-function animate() {
-  if (!isTabVisible || !isHeroVisible) {
-    isLoopRunning = false;
-    return;
-  }
-  requestAnimationFrame(animate);
-
-  const time = clock.getElapsedTime();
-  scrollY += (targetScrollY - scrollY) * 0.05;
-  mouseX += (targetMouseX - mouseX) * 0.05;
-  mouseY += (targetMouseY - mouseY) * 0.05;
-
-  const scrollFraction = scrollY / (cachedScrollHeight - window.innerHeight || 1);
-
-  headsetGroup.rotation.y = time * 0.35 + mouseX * 0.45;
-  headsetGroup.rotation.x = Math.sin(time * 0.5) * 0.18 + mouseY * 0.35;
-  headsetGroup.rotation.z = Math.cos(time * 0.4) * 0.1;
-  headsetGroup.position.y = 2 + Math.sin(time * 1.5) * 0.5;
-
-  gyro1Mesh.rotation.z = time * 0.6;
-  gyro2Mesh.rotation.z = -time * 0.4;
-
-  const pos = gridGeo.attributes.position;
-  for (let i = 0; i < pos.count; i++) {
-    const u = (i % gridWidth) / gridWidth;
-    const v = Math.floor(i / gridWidth) / gridHeight;
-    const wave1 = Math.sin(u * 10 + time * 2.0) * 1.2;
-    const wave2 = Math.cos(v * 8 + time * 1.5) * 1.2;
-    pos.setY(i, wave1 + wave2);
-  }
-  gridGeo.attributes.position.needsUpdate = true;
-
-  particleSystem.rotation.y = time * 0.03;
-  particleSystem.rotation.x = Math.sin(time * 0.02) * 0.1;
-
-  camera.position.z = 22 - scrollFraction * 8;
-  camera.position.y = 2 - scrollFraction * 3;
-  camera.position.x = Math.sin(scrollFraction * Math.PI * 2) * 5;
-  camera.lookAt(headsetGroup.position.x * 0.3, headsetGroup.position.y * 0.3, 0);
-
-  if (renderer) renderer.render(scene, camera);
-}
-
-animate();
-
-// Resize Handler
-window.addEventListener('resize', () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  updateResponsiveLayout();
-});
-
-// FAQ Toggle
-function toggleFaq(el) {
-  const item = el.parentElement;
-  item.classList.toggle('open');
-}
-
-// Form Submit Handler
-function handleFormSubmit(e) {
-  e.preventDefault();
-  const btn = document.getElementById('submitBtn');
-  btn.innerText = 'BUILDING DEMO AGENT...';
-  btn.style.background = '#fff';
-  btn.style.color = '#000';
-
-  setTimeout(() => {
-    btn.innerText = '✓ DEMO REQUEST SUBMITTED';
-    btn.style.background = '#e5c158';
-    btn.style.color = '#000';
-    btn.disabled = true;
-  }, 1200);
-}
-</script>
+  <!-- Optimized Scripts (QTK-003, QTK-011, QTK-013): deferred, no inline JS -->
+  <script src="assets/js/analytics.js" defer></script>
+  <script src="assets/three.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

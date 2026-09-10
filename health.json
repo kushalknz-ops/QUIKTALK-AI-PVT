@@ -1,7 +1,0 @@
-{
-  "status": "healthy",
-  "service": "quiktalkai",
-  "version": "1.0.0",
-  "environment": "production-ready",
-  "region": "auckland-nz"
-}

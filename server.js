@@ -5,11 +5,14 @@
  * Zero external npm dependencies required.
  */
 
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
-const url = require('url');
-const { handleLead } = require('./lib/leadHandler.js');
+import http from 'http';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { handleLead } from './lib/leadHandler.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const PORT = process.env.PORT || 3000;
 const ROOT_DIR = __dirname;
@@ -214,6 +217,14 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
+  // Traversal guard: never serve outside repo root
+  filePath = path.normalize(filePath);
+  if (filePath !== ROOT_DIR && !filePath.startsWith(ROOT_DIR + path.sep)) {
+    res.writeHead(403, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('403 Forbidden');
+    return;
+  }
+
   // Check if target exists and is a file
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
@@ -238,11 +249,12 @@ const server = http.createServer(async (req, res) => {
   });
 });
 
-if (require.main === module) {
+const isMainModule = process.argv[1] ? path.resolve(process.argv[1]) === __filename : false;
+if (isMainModule) {
   server.listen(PORT, () => {
     console.log(`[Server] Quiktalk AI running at http://localhost:${PORT}/`);
     console.log(`[Server] Press Ctrl+C to stop.\n`);
   });
 }
 
-module.exports = { server, parseHeadersFile };
+export { server, parseHeadersFile };

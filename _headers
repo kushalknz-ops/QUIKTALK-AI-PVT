@@ -24,3 +24,9 @@
 # Cache Rules: Unhashed static assets
 /assets/*
   Cache-Control: public, max-age=600
+
+# CUTOVER TEMPLATE (per-page indexing): at production cutover, REMOVE the global
+# X-Robots-Tag above and add one block per DRAFT (quarantined) page instead, e.g.:
+# /pricing
+#   X-Robots-Tag: noindex, nofollow
+# Verified/indexed pages ship with NO X-Robots-Tag. See PLACEHOLDERS.md.

@@ -4,3 +4,23 @@
 http://quiktalkai.com/* https://www.quiktalkai.com/:splat 301!
 https://quiktalkai.com/* https://www.quiktalkai.com/:splat 301!
 http://www.quiktalkai.com/* https://www.quiktalkai.com/:splat 301!
+
+# Clean-URL rewrites (extensionless): /pricing -> /pricing.html (200, no redirect)
+/pricing /pricing.html 200
+/pricing/ /pricing.html 200
+/about /about.html 200
+/about/ /about.html 200
+/ai-voice-agents /ai-voice-agents.html 200
+/ai-voice-agents/ /ai-voice-agents.html 200
+/ai-systems-automations /ai-systems-automations.html 200
+/ai-systems-automations/ /ai-systems-automations.html 200
+/ai-consulting /ai-consulting.html 200
+/ai-consulting/ /ai-consulting.html 200
+/web-software-development /web-software-development.html 200
+/web-software-development/ /web-software-development.html 200
+/case-studies /case-studies.html 200
+/case-studies/ /case-studies.html 200
+/privacy-policy /privacy-policy.html 200
+/privacy-policy/ /privacy-policy.html 200
+/terms /terms.html 200
+/terms/ /terms.html 200

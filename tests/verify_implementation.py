@@ -43,7 +43,7 @@ print("============================================================\n")
 print("1. Testing lib/leadHandler.js (Shared Single Source of Truth - QTK-001)")
 
 node_test_script = """
-const { validateLead, handleLead } = require('./lib/leadHandler.js');
+import { validateLead, handleLead } from './lib/leadHandler.js';
 
 async function runTests() {
   const results = [];
@@ -126,10 +126,14 @@ else:
 print("\n2. Testing server.js (Header Parity & Route Verification - QTK-011, QTK-025)")
 
 TEST_PORT = 3456
-server_proc = subprocess.Popen(['node', 'server.js'], env={**os.environ, 'PORT': str(TEST_PORT)}, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-time.sleep(1.5)
-
-base_url = f"http://127.0.0.1:{TEST_PORT}"
+if args.url:
+    base_url = args.url.rstrip('/')
+    server_proc = None
+    print(f"Targeting REMOTE host: {base_url} (local server NOT started)")
+else:
+    server_proc = subprocess.Popen(['node', 'server.js'], env={**os.environ, 'PORT': str(TEST_PORT)}, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    time.sleep(1.5)
+    base_url = f"http://127.0.0.1:{TEST_PORT}"
 
 def fetch_url(path, method='GET', data=None, headers=None):
     url = base_url + path
@@ -194,7 +198,7 @@ try:
 
     # Test /api/health
     status_health, _, body_health = fetch_url('/api/health')
-    assert_test(status_health == 200 and 'healthy' in body_health or 'ok' in body_health, "GET /api/health returns HTTP 200")
+    assert_test(status_health == 200 and ('healthy' in body_health or 'ok' in body_health), "GET /api/health returns HTTP 200")
 
     # Test /api/csp-report
     status_csp, _, _ = fetch_url('/api/csp-report', method='POST', data={'csp-report': {'blocked-uri': 'eval'}})
@@ -227,8 +231,9 @@ try:
     assert_test(status_404 == 404 and '404' in body_404, "GET /non-existent-page returns custom 404 page")
 
 finally:
-    server_proc.terminate()
-    server_proc.wait()
+    if server_proc is not None:
+        server_proc.terminate()
+        server_proc.wait()
 
 # ------------------------------------------------------------
 # 3. Static Code & SEO Quality Checks
@@ -266,14 +271,28 @@ assert_test('id="leadHp"' in html and '_hp' in html, "Security/Spam: Honeypot fi
 assert_test('<label class="sr-only"' in html, "Accessibility: Accessible labels present for form inputs")
 assert_test('<noscript>' in html, "Resilience: <noscript> fallback styles present")
 
+# QTK-001 wiring regression: page must load real app, no inline handlers
+assert_test('assets/js/main.js' in html and 'defer' in html, "Wiring: index.html loads deferred main.js")
+assert_test(re.search(r'\son\w+="', html) is None, "Wiring: zero inline event handlers in index.html")
+with open('assets/js/main.js', 'r', encoding='utf-8') as f:
+    main_js = f.read()
+assert_test("fetch('/api/lead'" in main_js and "getElementById('leadForm')" in main_js, "Wiring: main.js submits leadForm to /api/lead")
+
 # Sitemap validation
 try:
     tree = ET.parse('sitemap.xml')
     root = tree.getroot()
     urls = [elem.text for elem in root.findall('.//{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-    assert_test(len(urls) >= 10, f"Sitemap valid with {len(urls)} URLs")
-    assert_test('https://www.quiktalkai.com/' in urls, "Sitemap includes canonical root")
-    assert_test('https://www.quiktalkai.com/pricing' in urls, "Sitemap includes /pricing")
+    if TARGET_ENV == 'prod':
+        assert_test('https://www.quiktalkai.com/' in urls, "Sitemap includes canonical root (PROD)")
+        for u in urls:
+            p = urllib.parse.urlparse(u).path or '/'
+            s_code, _, _ = fetch_url(p)
+            assert_test(s_code == 200, f"Sitemap URL live: {p if p else '/'}")
+    else:
+        assert_test(len(urls) >= 10, f"Sitemap valid with {len(urls)} URLs")
+        assert_test('https://www.quiktalkai.com/' in urls, "Sitemap includes canonical root")
+        assert_test('https://www.quiktalkai.com/pricing' in urls, "Sitemap includes /pricing")
 except Exception as e:
     assert_test(False, "sitemap.xml validation", str(e))
 
